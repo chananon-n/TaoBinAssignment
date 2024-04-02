@@ -1,50 +1,6 @@
-class MachineSaleEvent implements IEvent {
-    constructor(private readonly _sold: number, private readonly _machineId: string) {}
-  
-    machineId(): string {
-      return this._machineId;
-    }
-  
-    getSoldQuantity(): number {
-      return this._sold
-    }
-  
-    type(): string {
-      return 'sale';
-    }
-  }
-  
-  class MachineRefillEvent implements IEvent {
-    constructor(private readonly _refill: number, private readonly _machineId: string) {}
-  
-    machineId(): string {
-      throw new Error("Method not implemented.");
-    }
-  
-    type(): string {
-      throw new Error("Method not implemented.");
-    }
-  }
+import { MachineRefillEvent, MachineSaleEvent } from "./machineEvents";
 
-  class MachineSaleSubscriber implements ISubscriber {
-    public machines: Machine[];
-  
-    constructor (machines: Machine[]) {
-      this.machines = machines; 
-    }
-  
-    handle(event: MachineSaleEvent): void {
-      this.machines[2].stockLevel -= event.getSoldQuantity();
-    }
-  }
-  
-  class MachineRefillSubscriber implements ISubscriber {
-    handle(event: IEvent): void {
-      throw new Error("Method not implemented.");
-    }
-  }
-
-  class PublishSubscriber implements IPublishSubscribeService {
+class PublishSubscriber implements IPublishSubscribeService {
 
       private subscribers: Map<string, ISubscriber[]> = new Map(); 
       
