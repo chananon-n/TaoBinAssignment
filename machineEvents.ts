@@ -37,6 +37,12 @@ class MachineEvent implements IEvent {
     machineId(): string {
       return this._machineId;
     }
+
+
+    getRefillQuantity(): number {
+      return this._refill;
+    }
+
   
     type(): string {
       return 'refill';
