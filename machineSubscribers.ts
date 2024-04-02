@@ -1,5 +1,7 @@
+
 import { Machine } from './machine';
 import { MachineRefillEvent, MachineSaleEvent } from "./machineEvents";
+
 
 class MachineSaleSubscriber implements ISubscriber {
     public machines: Machine[];
@@ -13,6 +15,7 @@ class MachineSaleSubscriber implements ISubscriber {
     }
   }
   
+
   class MachineRefillSubscriber implements ISubscriber {
     public machines: Machine[];
 
@@ -24,3 +27,4 @@ class MachineSaleSubscriber implements ISubscriber {
         this.machines[2].stockLevel += event.getRefillQuantity();
     }
   }
+

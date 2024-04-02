@@ -1,9 +1,8 @@
 export class Machine {
-    public stockLevel = 10;
-    public id: string;
-  
-    constructor (id: string) {
-      this.id = id;
+
+    public stockLevel: number = 10;
+    public machineId: string;
+    constructor (machineId: string, stockLevel: number) {
+
     }
   }
-  
