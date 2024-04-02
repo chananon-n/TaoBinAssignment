@@ -1,4 +1,4 @@
-class Machine {
+export class Machine {
     public stockLevel = 10;
     public id: string;
   

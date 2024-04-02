@@ -1,10 +1,11 @@
+
 // interfaces
 interface IEvent {
     type(): string;
     machineId(): string;
   }
   
-  interface ISubscriber {
+interface ISubscriber {
     handle(event: IEvent): void;
   }
   
